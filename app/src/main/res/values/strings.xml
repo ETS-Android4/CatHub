@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">tapTest</string>
+    <string name="tab_text_1">Album</string>
+    <string name="tab_text_2">Phone Book</string>
+    <string name="tab_text_3">Translator</string>
+</resources>
