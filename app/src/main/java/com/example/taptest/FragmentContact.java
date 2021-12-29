@@ -14,6 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
+import java.io.InputStream;
+
 public class FragmentContact extends Fragment {
 
     View v;
@@ -38,37 +41,47 @@ public class FragmentContact extends Fragment {
         return v;
     }
 
-
-    // nCteate메서드 에서 데이터관련 코드 넣음
+    // onCreate메서드 에서 데이터관련 코드 넣음
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        lstContact = new ArrayList<>();
-        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_launcher_background));
-
+            lstContact = new ArrayList<>();
+            lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_group_wh));
+            lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_call_wh));
+            lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_star_wh));
+            lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_group_wh));
+            lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_call_wh));
+            lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_star_wh));
+            lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_group_wh));
+            lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_call_wh));
+            lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_star_wh));
+            lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_group_wh));
+            lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_call_wh));
+            lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_star_wh));
+            lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_group_wh));
+            lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_call_wh));
+            lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_star_wh));
+            lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_group_wh));
+            lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_call_wh));
+            lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_group_wh));
+            lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_call_wh));
+            lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_star_wh));
+            lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_star_wh));
+            lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_group_wh));
+            lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_call_wh));
+            lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_star_wh));
     }
+
+    //code for phoneNumber
+    /*private ArrayList<PhoneNumberVO>getPhoneNumbers(){
+        ArrayList<PhoneNumberVO>list_phoneNumers = new ArrayList<>();
+        Gson gson = new Gson();
+
+        try{
+            InputStream is = getAssets().open("album.json");
+
+
+        }
+    }*/
 }
