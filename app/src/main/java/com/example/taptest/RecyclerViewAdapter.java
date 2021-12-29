@@ -15,21 +15,33 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
     //액티비티의 Context, Data추가
     Context mContext;
-    List<Contact> mData;
+    List<PhoneNumberVO> mData;
     Dialog mDialog;
+    public OnItemClickListener mOnItemClickListener = null;
 
-    public RecyclerViewAdapter(Context mContext, List<Contact> mData) {
+
+
+    public interface OnItemClickListener {
+        void onItemClick(View view, PhoneNumberVO phoneNumberVO);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mOnItemClickListener = listener;
+    }
+
+    public RecyclerViewAdapter(Context mContext, List<PhoneNumberVO> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
 
-    //1) onCreateViewHolder
+    //1) onCreateViewHolder: ViewHolder 생성 시 호출. 처음 화면에 보이는 View에 대해 생성
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -53,7 +65,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 ImageView dialog_contact_img = mDialog.findViewById(R.id.dialog_img);
                 dialog_name_tv.setText(mData.get(vHolder.getAdapterPosition()).getName());
                 dialog_phone_tv.setText(mData.get(vHolder.getAdapterPosition()).getPhone());
-                dialog_contact_img.setImageResource(mData.get(vHolder.getAdapterPosition()).getPhoto());
+                //dialog_contact_img.setImageResource(mData.get(vHolder.getAdapterPosition()).getPhoto());
 
 
                 mDialog.show();
@@ -71,12 +83,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return vHolder;
     }
 
-    //2 onBindViewHolder
+    //2 onBindViewHolder: 화면에 ViewHolder가 붙을 때마다 호출 (실질적인 데이터 처리 이루어짐)
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        //PhoneNumberVO phoneNumberVO = mData.get(position);
         holder.tv_name.setText(mData.get(position).getName());
         holder.tv_phone.setText(mData.get(position).getPhone());
-        holder.img.setImageResource(mData.get(position).getPhoto());
+        //holder.img.setImageResource(mData.get(position).getPhoto());
     }
 
     //3) getItemCount
