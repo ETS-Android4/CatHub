@@ -45,30 +45,30 @@ public class FragmentContact extends Fragment {
         super.onCreate(savedInstanceState);
 
         lstContact = new ArrayList<>();
-        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_launcher_background));
-        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_launcher_background));
+        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_baseline_contacts_24));
+        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_baseline_call_24));
+        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_baseline_star_24));
+        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_baseline_contacts_24));
+        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_baseline_call_24));
+        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_baseline_star_24));
+        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_baseline_contacts_24));
+        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_baseline_call_24));
+        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_baseline_star_24));
+        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_baseline_contacts_24));
+        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_baseline_call_24));
+        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_baseline_star_24));
+        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_baseline_contacts_24));
+        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_baseline_call_24));
+        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_baseline_star_24));
+        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_baseline_contacts_24));
+        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_baseline_call_24));
+        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_baseline_contacts_24));
+        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_baseline_call_24));
+        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_baseline_star_24));
+        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_baseline_star_24));
+        lstContact.add(new Contact("Aaron Jones", "(111) 251236211", R.drawable.ic_baseline_contacts_24));
+        lstContact.add(new Contact("chan Jones", "(02) 251236211", R.drawable.ic_baseline_call_24));
+        lstContact.add(new Contact("park Jones", "(031) 251236211", R.drawable.ic_baseline_star_24));
 
     }
 }
