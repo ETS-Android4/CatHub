@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         // 4. 이미지 아이콘 추가 vector asset 추가후 => android:fillColor="#fff"
-        tabLayout.getTabAt(0).setIcon(R.drawable.ic_call_wh);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_album_wh);
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_group_wh);
-        tabLayout.getTabAt(2).setIcon(R.drawable.ic_star_wh);
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_translate_wh);
 
     }
 }
