@@ -1,12 +1,17 @@
 package com.example.taptest;
 
 import android.app.Dialog;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -65,17 +70,64 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 ImageView dialog_contact_img = mDialog.findViewById(R.id.dialog_img);
                 dialog_name_tv.setText(mData.get(vHolder.getAdapterPosition()).getName());
                 dialog_phone_tv.setText(mData.get(vHolder.getAdapterPosition()).getPhone());
-                //dialog_contact_img.setImageResource(mData.get(vHolder.getAdapterPosition()).getPhoto());
-
 
                 mDialog.show();
+
+                Button call_btn = (Button) mDialog.findViewById(R.id.dialog_btn_call);
+                Button msg_btn = (Button) mDialog.findViewById(R.id.dialog_btn_message);
+
+                call_btn.setOnClickListener(new Button.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // TODO : click event
+                        Toast.makeText(mContext, "Call button click", Toast.LENGTH_SHORT).show();
+
+                        try {
+                            Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                            callIntent.setData(Uri.parse("tel:" + vHolder.tv_phone.getText().toString()));
+                            v.getContext().startActivity(callIntent);
+                        }
+                        catch (ActivityNotFoundException e) {
+                            Log.e("Call", "Fail to Calling", e);
+                        }
+                    }
+                });
+
+                msg_btn.setOnClickListener(new Button.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // TODO : click event
+                        Toast.makeText(mContext, "Msg button click", Toast.LENGTH_SHORT).show();
+
+                        try {
+                            Intent msgIntent = new Intent(Intent.ACTION_VIEW);
+                            msgIntent.setData(Uri.parse("sms:" + vHolder.tv_phone.getText().toString()));
+                            msgIntent.putExtra("sms_body", "Hello world!");
+                            v.getContext().startActivity(msgIntent);
+                        }
+                        catch (ActivityNotFoundException e) {
+                            Log.e("Msg", "Fail to Messaging", e);
+                        }
+                    }
+                });
+
             }
         });
 
         vHolder.item_call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "Call Image Click"+ String.valueOf(vHolder.getAdapterPosition()), Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "Move to Dial"+ String.valueOf(vHolder.getAdapterPosition()), Toast.LENGTH_SHORT).show();
+
+                try {
+                    Intent newIntent = new Intent(Intent.ACTION_DIAL);
+                    newIntent.setData(Uri.parse("tel:" + vHolder.tv_phone.getText().toString()));
+                    v.getContext().startActivity(newIntent);
+                }
+                catch (ActivityNotFoundException e) {
+                    Log.e("Dial", "Fail to dial", e);
+                }
+
             }
         });
         //------------------------------------------------------------------------------------------

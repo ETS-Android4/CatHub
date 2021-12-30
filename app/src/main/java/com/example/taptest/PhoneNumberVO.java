@@ -3,7 +3,7 @@ package com.example.taptest;
 public class PhoneNumberVO {
     private String name;
     private String phone;
-    //private int photo;
+    private int photo;
     public PhoneNumberVO() {}
     public PhoneNumberVO(String names, String phones) {
         name = names;
@@ -26,15 +26,14 @@ public class PhoneNumberVO {
         this.phone = phones;
     }
 
-   /* public int getPhoto(){
+   public int getPhoto(){
         return photo;
     }
 
-    public void setPhoto(){
-        this.photo = photo;
+    public void setPhoto(int photos){
+        this.photo = photos;
     }
 
-    */
 
     @Override
     public String toString(){
