@@ -79,7 +79,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 call_btn.setOnClickListener(new Button.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        // TODO : click event
                         Toast.makeText(mContext, "Call button click", Toast.LENGTH_SHORT).show();
 
                         try {
@@ -96,7 +95,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 msg_btn.setOnClickListener(new Button.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        // TODO : click event
                         Toast.makeText(mContext, "Msg button click", Toast.LENGTH_SHORT).show();
 
                         try {
