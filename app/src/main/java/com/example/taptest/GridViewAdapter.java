@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -43,6 +44,13 @@ public class GridViewAdapter extends BaseAdapter {
         }
         ImageView photo = convertView.findViewById(R.id.imageView);
         photo.setImageResource(gallery.getPhoto());
+
+        photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "Click Event!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return convertView;
     }

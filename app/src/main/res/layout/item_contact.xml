@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:src="@mipmap/ic_launcher_round"
+        android:src="@drawable/cat"
         android:id="@+id/img_contact"        />
     <LinearLayout
         android:layout_width="wrap_content"
