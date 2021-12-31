@@ -17,8 +17,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        setTheme(R.style.Theme_TapTest_NoActionBar);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         // 1. tablayout과 viewpager 셋팅하는 부분
         tabLayout = findViewById(R.id.tablayout_id);

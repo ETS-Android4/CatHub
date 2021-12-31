@@ -15,6 +15,8 @@
         <entry key="app/src/main/res/drawable/ic_msg_wh.xml" value="0.228125" />
         <entry key="app/src/main/res/drawable/ic_star.xml" value="0.228125" />
         <entry key="app/src/main/res/drawable/ic_star_wh.xml" value="0.228125" />
+        <entry key="app/src/main/res/drawable/ic_translate_wh.xml" value="0.1796875" />
+        <entry key="app/src/main/res/drawable/splash.xml" value="0.228125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1607029215483335" />
         <entry key="app/src/main/res/layout/add_contact.xml" value="0.33469202898550726" />
         <entry key="app/src/main/res/layout/contact_fragment.xml" value="0.2" />
