@@ -60,7 +60,7 @@ public class GridViewAdapter extends BaseAdapter {
         photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Click Event!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Image Clicked!", Toast.LENGTH_SHORT).show();
                 ImageView photos = mDialog.findViewById(R.id.photo);
                 photos.setImageResource(gallery.getPhoto());
 
