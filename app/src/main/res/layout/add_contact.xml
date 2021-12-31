@@ -22,7 +22,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name"
+            android:hint="Name"
             android:paddingLeft="10dp" />
 
         <EditText
@@ -32,7 +32,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Phone Number"
+            android:hint="Phone Number"
             android:paddingLeft="10dp"/>
 
         <LinearLayout
@@ -45,14 +45,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Cancel" />
+                android:text="Cancel"
+                android:textColor="#00B0FF"
+                android:backgroundTint="#F3F3F3"/>
 
             <Button
                 android:id="@+id/button2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ok" />
+                android:text="Ok"
+                android:textColor="#00B0FF"
+                android:backgroundTint="#F3F3F3" />
         </LinearLayout>
 
     </LinearLayout>
@@ -70,7 +74,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text="Add Contact"
-        android:textColor="#00B0FF"
+        android:textColor="#000000"
         android:textSize="25dp" />
 
 
