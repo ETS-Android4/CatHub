@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         // 2. 프래그먼트 추가
         viewPagerAdapter.AddFragment(new FragmentCall(),"");
         viewPagerAdapter.AddFragment(new FragmentContact(),"");
-        viewPagerAdapter.AddFragment(new FragmentFav(),"");
+        viewPagerAdapter.AddFragment(new TicTacFrag(),"");
 
         // 3. 탭레이아웃 set
         viewPager.setAdapter(viewPagerAdapter);
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         // 4. 이미지 아이콘 추가 vector asset 추가후 => android:fillColor="#fff"
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_album_wh);
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_group_wh);
-        tabLayout.getTabAt(2).setIcon(R.drawable.ic_translate_wh);
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_baseline_star_24);
 
     }
 }
