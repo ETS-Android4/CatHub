@@ -8,6 +8,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,10 +38,11 @@ import java.io.InputStream;
 
 
 
-public class FragmentContact extends Fragment {
+public class FragmentContact extends Fragment implements TextWatcher {
 
     View v;
     private RecyclerView myrecyclerview;
+    private RecyclerViewAdapter recyclerViewAdapter;
     public List<PhoneNumberVO> lstContact;
     public Object PhoneNumberVO;
 
@@ -57,13 +59,16 @@ public class FragmentContact extends Fragment {
 
         myrecyclerview = v.findViewById(R.id.contact_recyclerview);
         myrecyclerview.addItemDecoration(new DividerItemDecoration(v.getContext(), 1));
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(), lstContact);
+        recyclerViewAdapter = new RecyclerViewAdapter(getContext(), lstContact);
         myrecyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
         myrecyclerview.setAdapter(recyclerViewAdapter);
 
         mDialog = new Dialog(v.getContext());
         mDialog.setContentView(R.layout.add_contact);
         mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        EditText editText = v.findViewById(R.id.searchContact);
+        editText.addTextChangedListener(this);
 
         FloatingActionButton fab = v.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -141,6 +146,21 @@ public class FragmentContact extends Fragment {
             e.printStackTrace();
         }
 
+
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+        recyclerViewAdapter.getFilter().filter(s.toString());
+    }
+
+    @Override
+    public void afterTextChanged(Editable editable) {
 
     }
 }

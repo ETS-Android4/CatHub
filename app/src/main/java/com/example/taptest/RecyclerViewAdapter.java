@@ -7,11 +7,14 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -23,27 +26,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> implements Filterable {
 
     //액티비티의 Context, Data추가
     Context mContext;
-    List<PhoneNumberVO> mData;
+    List<PhoneNumberVO> mData; // filteredList
+    List<PhoneNumberVO> unFilData; // unfilteredlist
     Dialog mDialog;
-    public OnItemClickListener mOnItemClickListener = null;
 
 
-
-    public interface OnItemClickListener {
-        void onItemClick(View view, PhoneNumberVO phoneNumberVO);
-    }
-
-    public void setOnItemClickListener(OnItemClickListener listener) {
-        mOnItemClickListener = listener;
-    }
 
     public RecyclerViewAdapter(Context mContext, List<PhoneNumberVO> mData) {
         this.mContext = mContext;
         this.mData = mData;
+        this.unFilData = mData;
     }
 
     //1) onCreateViewHolder: ViewHolder 생성 시 호출. 처음 화면에 보이는 View에 대해 생성
@@ -146,6 +142,37 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public int getItemCount() {
         return mData.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                String str = constraint.toString();
+                if(str.isEmpty()) {
+                    mData = unFilData;
+                } else {
+                    List<PhoneNumberVO> filteringList = new ArrayList<>();
+                    for(PhoneNumberVO item : unFilData) {
+                        if(item.getName().toLowerCase().contains(str) || item.getName().contains(str) || item.getPhone().contains(str))
+                            filteringList.add(item);
+                    }
+                    mData = filteringList;
+                }
+
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = mData;
+
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                mData = (List<PhoneNumberVO>) results.values;
+                notifyDataSetChanged();
+            }
+        };
     }
 
     //0) 뷰홀더 이너클래스 생성
