@@ -7,6 +7,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -52,18 +54,17 @@ public class GridViewAdapter extends BaseAdapter {
         mDialog = new Dialog(context);
         mDialog.setContentView(R.layout.dialog_photo);
         mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        //mDialog.getWindow().getAttributes().windowAnimations = R.anim.scale;
+
 
         photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "Click Event!", Toast.LENGTH_SHORT).show();
-
                 ImageView photos = mDialog.findViewById(R.id.photo);
                 photos.setImageResource(gallery.getPhoto());
 
                 mDialog.show();
-                //getPhoto
-
             }
         });
 

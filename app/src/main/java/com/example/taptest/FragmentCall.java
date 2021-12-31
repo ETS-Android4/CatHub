@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.ScaleAnimation;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
@@ -30,28 +32,36 @@ public class FragmentCall extends Fragment {
         v = inflater.inflate(R.layout.fragment_call, container, false);
         GridView gridView = v.findViewById(R.id.gridView);
         GridViewAdapter adapter = new GridViewAdapter();
-        adapter.addItem(new Gallery(R.drawable.ic_call));
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
+
+        adapter.addItem(new Gallery(R.drawable.bw1));
+        adapter.addItem(new Gallery(R.drawable.bw2));
+        adapter.addItem(new Gallery(R.drawable.bw3));
+        adapter.addItem(new Gallery(R.drawable.bw4));
+        adapter.addItem(new Gallery(R.drawable.bw5));
+        adapter.addItem(new Gallery(R.drawable.bw6));
+        adapter.addItem(new Gallery(R.drawable.bw7));
+        adapter.addItem(new Gallery(R.drawable.bw8));
+        adapter.addItem(new Gallery(R.drawable.bw9));
+        adapter.addItem(new Gallery(R.drawable.bw10));
+        adapter.addItem(new Gallery(R.drawable.bw11));
+        adapter.addItem(new Gallery(R.drawable.bw12));
+        adapter.addItem(new Gallery(R.drawable.bw8));
+        adapter.addItem(new Gallery(R.drawable.bw3));
+        adapter.addItem(new Gallery(R.drawable.bw5));
+        adapter.addItem(new Gallery(R.drawable.bw2));
+        adapter.addItem(new Gallery(R.drawable.bw1));
+        adapter.addItem(new Gallery(R.drawable.bw9));
+        adapter.addItem(new Gallery(R.drawable.bw11));
+        adapter.addItem(new Gallery(R.drawable.bw10));
+        adapter.addItem(new Gallery(R.drawable.bw6));
         gridView.setAdapter(adapter);
         return v;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+
     }
 }
