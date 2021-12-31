@@ -1,6 +1,9 @@
 package com.example.taptest;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +16,7 @@ import java.util.ArrayList;
 public class GridViewAdapter extends BaseAdapter {
     ArrayList<Gallery> items = new ArrayList<Gallery>();
     Context context;
+    Dialog mDialog;
 
     public void addItem(Gallery gallery) {
         items.add(gallery);
@@ -45,10 +49,21 @@ public class GridViewAdapter extends BaseAdapter {
         ImageView photo = convertView.findViewById(R.id.imageView);
         photo.setImageResource(gallery.getPhoto());
 
+        mDialog = new Dialog(context);
+        mDialog.setContentView(R.layout.dialog_photo);
+        mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
         photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "Click Event!", Toast.LENGTH_SHORT).show();
+
+                ImageView photos = mDialog.findViewById(R.id.photo);
+                photos.setImageResource(gallery.getPhoto());
+
+                mDialog.show();
+                //getPhoto
+
             }
         });
 

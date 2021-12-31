@@ -30,7 +30,7 @@ public class FragmentCall extends Fragment {
         v = inflater.inflate(R.layout.fragment_call, container, false);
         GridView gridView = v.findViewById(R.id.gridView);
         GridViewAdapter adapter = new GridViewAdapter();
-        adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
+        adapter.addItem(new Gallery(R.drawable.ic_call));
         adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
         adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
         adapter.addItem(new Gallery(R.drawable.ic_launcher_background));
