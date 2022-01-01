@@ -4,20 +4,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
-import android.view.animation.ScaleAnimation;
-import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class FragmentCall extends Fragment {
 
@@ -33,27 +24,27 @@ public class FragmentCall extends Fragment {
         GridView gridView = v.findViewById(R.id.gridView);
         GridViewAdapter adapter = new GridViewAdapter();
 
-        adapter.addItem(new Gallery(R.drawable.bw1));
-        adapter.addItem(new Gallery(R.drawable.bw2));
-        adapter.addItem(new Gallery(R.drawable.bw3));
-        adapter.addItem(new Gallery(R.drawable.bw4));
-        adapter.addItem(new Gallery(R.drawable.bw5));
-        adapter.addItem(new Gallery(R.drawable.bw6));
-        adapter.addItem(new Gallery(R.drawable.bw7));
-        adapter.addItem(new Gallery(R.drawable.bw8));
-        adapter.addItem(new Gallery(R.drawable.bw9));
+        adapter.addItem(new Gallery(R.drawable.bw01));
+        adapter.addItem(new Gallery(R.drawable.bw02));
+        adapter.addItem(new Gallery(R.drawable.bw03));
+        adapter.addItem(new Gallery(R.drawable.bw04));
+        adapter.addItem(new Gallery(R.drawable.bw05));
+        adapter.addItem(new Gallery(R.drawable.bw06));
+        adapter.addItem(new Gallery(R.drawable.bw07));
+        adapter.addItem(new Gallery(R.drawable.bw08));
+        adapter.addItem(new Gallery(R.drawable.bw09));
         adapter.addItem(new Gallery(R.drawable.bw10));
         adapter.addItem(new Gallery(R.drawable.bw11));
         adapter.addItem(new Gallery(R.drawable.bw12));
-        adapter.addItem(new Gallery(R.drawable.bw8));
-        adapter.addItem(new Gallery(R.drawable.bw3));
-        adapter.addItem(new Gallery(R.drawable.bw5));
-        adapter.addItem(new Gallery(R.drawable.bw2));
-        adapter.addItem(new Gallery(R.drawable.bw1));
-        adapter.addItem(new Gallery(R.drawable.bw9));
-        adapter.addItem(new Gallery(R.drawable.bw11));
-        adapter.addItem(new Gallery(R.drawable.bw10));
-        adapter.addItem(new Gallery(R.drawable.bw6));
+        adapter.addItem(new Gallery(R.drawable.bw13));
+        adapter.addItem(new Gallery(R.drawable.bw14));
+        adapter.addItem(new Gallery(R.drawable.bw15));
+        adapter.addItem(new Gallery(R.drawable.bw16));
+        adapter.addItem(new Gallery(R.drawable.bw17));
+        adapter.addItem(new Gallery(R.drawable.bw18));
+        adapter.addItem(new Gallery(R.drawable.bw19));
+        adapter.addItem(new Gallery(R.drawable.bw20));
+        adapter.addItem(new Gallery(R.drawable.bw21));
         gridView.setAdapter(adapter);
         return v;
     }

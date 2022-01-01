@@ -11,6 +11,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -55,6 +56,7 @@ public class GridViewAdapter extends BaseAdapter {
         mDialog.setContentView(R.layout.dialog_photo);
         mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         //mDialog.getWindow().getAttributes().windowAnimations = R.anim.scale;
+        ScrollView scroll = new ScrollView(context);
 
 
         photo.setOnClickListener(new View.OnClickListener() {
@@ -62,8 +64,12 @@ public class GridViewAdapter extends BaseAdapter {
             public void onClick(View v) {
                 Toast.makeText(context, "Image Clicked!", Toast.LENGTH_SHORT).show();
                 ImageView photos = mDialog.findViewById(R.id.photo);
-                photos.setImageResource(gallery.getPhoto());
+                ImageView photosBack = mDialog.findViewById(R.id.photo_back);
+                ImageView photosNext = mDialog.findViewById(R.id.photo_next);
 
+                photos.setImageResource(gallery.getPhoto());
+                photosBack.setImageResource(gallery.getPhotoBack());
+                photosNext.setImageResource(gallery.getPhotoNext());
                 mDialog.show();
             }
         });
