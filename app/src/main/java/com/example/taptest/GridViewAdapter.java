@@ -1,15 +1,20 @@
 package com.example.taptest;
 
 import android.app.Dialog;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -19,7 +24,7 @@ import java.util.List;
 public class GridViewAdapter extends BaseAdapter {
     List<Gallery> items;
     Context context;
-    Dialog mDialog;
+    Dialog mDialog, rDialog;
 
     public GridViewAdapter(Context mContext, List<Gallery> mData) {
         this.context = mContext;
@@ -68,6 +73,9 @@ public class GridViewAdapter extends BaseAdapter {
         mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         //mDialog.getWindow().getAttributes().windowAnimations = R.anim.scale;
 
+        rDialog = new Dialog(context);
+        rDialog.setContentView(R.layout.remove_photo);
+
 
         photo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +87,37 @@ public class GridViewAdapter extends BaseAdapter {
                     photos.setImageResource(gallery.getPhoto());
                 }
                 mDialog.show();
+            }
+        });
+
+
+        photo.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+
+                rDialog.show();
+
+                Button yes_btn = (Button) rDialog.findViewById(R.id.yes_button);
+                Button no_btn = (Button) rDialog.findViewById(R.id.no_button);
+
+                yes_btn.setOnClickListener(new Button.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        items.remove(position);
+                        notifyDataSetChanged();
+                        rDialog.dismiss();
+                    }
+                });
+
+                no_btn.setOnClickListener(new Button.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(v.getContext(),"Cancel remove", Toast.LENGTH_SHORT).show();
+                        rDialog.dismiss();
+                    }
+                });
+
+                return true;
             }
         });
 
