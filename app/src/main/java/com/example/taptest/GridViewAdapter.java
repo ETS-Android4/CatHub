@@ -14,11 +14,17 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class GridViewAdapter extends BaseAdapter {
-    ArrayList<Gallery> items = new ArrayList<Gallery>();
+    List<Gallery> items;
     Context context;
     Dialog mDialog;
+
+    public GridViewAdapter(Context mContext, List<Gallery> mData) {
+        this.context = mContext;
+        this.items = mData;
+    }
 
     public void addItem(Gallery gallery) {
         items.add(gallery);
@@ -49,7 +55,13 @@ public class GridViewAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.item_gallery, parent, false);
         }
         ImageView photo = convertView.findViewById(R.id.imageView);
-        photo.setImageResource(gallery.getPhoto());
+
+        if(gallery.getPhoto() == -1) { photo.setImageBitmap(gallery.getBitmap()); }
+        else {
+            photo.setImageResource(gallery.getPhoto());
+        }
+
+
 
         mDialog = new Dialog(context);
         mDialog.setContentView(R.layout.dialog_photo);
@@ -62,8 +74,10 @@ public class GridViewAdapter extends BaseAdapter {
             public void onClick(View v) {
                 Toast.makeText(context, "Image Clicked!", Toast.LENGTH_SHORT).show();
                 ImageView photos = mDialog.findViewById(R.id.photo);
-                photos.setImageResource(gallery.getPhoto());
-
+                if(gallery.getPhoto() == -1) { photos.setImageBitmap(gallery.getBitmap()); }
+                else {
+                    photos.setImageResource(gallery.getPhoto());
+                }
                 mDialog.show();
             }
         });

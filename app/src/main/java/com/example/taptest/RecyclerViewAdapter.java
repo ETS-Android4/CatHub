@@ -78,7 +78,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                         Toast.makeText(mContext, "Call button click", Toast.LENGTH_SHORT).show();
 
                         try {
-                            Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                            Intent callIntent = new Intent(Intent.ACTION_CALL);
                             callIntent.setData(Uri.parse("tel:" + vHolder.tv_phone.getText().toString()));
                             v.getContext().startActivity(callIntent);
                         }
