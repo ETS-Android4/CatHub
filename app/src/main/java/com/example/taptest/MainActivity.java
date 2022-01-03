@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         // 2. 프래그먼트 추가
         viewPagerAdapter.AddFragment(new FragmentCall(),"");
         viewPagerAdapter.AddFragment(new FragmentContact(),"");
-        viewPagerAdapter.AddFragment(new TicTacFrag(),"");
+        viewPagerAdapter.AddFragment(new Sutda_game(),"");
 
         // 3. 탭레이아웃 set
         viewPager.setAdapter(viewPagerAdapter);
