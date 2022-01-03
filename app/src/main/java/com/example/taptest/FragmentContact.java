@@ -1,12 +1,17 @@
 package com.example.taptest;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -25,6 +30,7 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +50,7 @@ public class FragmentContact extends Fragment implements TextWatcher {
     View v;
     private RecyclerView myrecyclerview;
     private RecyclerViewAdapter recyclerViewAdapter;
+    private final int REQUEST_CONTACT = 10;
     public List<PhoneNumberVO> lstContact;
     public Object PhoneNumberVO;
 
@@ -104,10 +111,21 @@ public class FragmentContact extends Fragment implements TextWatcher {
 
                         PhoneNumberVO phoneNumberVO = new PhoneNumberVO(name, phone);
                         lstContact.add(phoneNumberVO);
+                        recyclerViewAdapter.notifyDataSetChanged();
                         mDialog.dismiss();
                     }
                 });
 
+            }
+        });
+
+        FloatingActionButton fab2 = v.findViewById(R.id.fab_connect);
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setData(ContactsContract.CommonDataKinds.Phone.CONTENT_URI);
+                startActivityForResult(intent, REQUEST_CONTACT);
             }
         });
 
@@ -167,6 +185,26 @@ public class FragmentContact extends Fragment implements TextWatcher {
         }
     };
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == REQUEST_CONTACT && resultCode == Activity.RESULT_OK) {
+            Cursor cursor = getActivity().getContentResolver().query(data.getData(),
+                    new String[] {ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME, ContactsContract.CommonDataKinds.Phone.NUMBER},
+                    null, null, null);
+            cursor.moveToFirst();
+            String name = cursor.getString(0);
+            String phone = cursor.getString(1);
+            cursor.close();
+
+            PhoneNumberVO phoneNumberVO = new PhoneNumberVO(name, phone);
+            lstContact.add(phoneNumberVO);
+            recyclerViewAdapter.notifyDataSetChanged();
+        } else {
+            Toast.makeText(getContext(), "Fail", Toast.LENGTH_SHORT).show();
+        }
+    }
 
     @Override
     public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {

@@ -13,6 +13,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.renderscript.ScriptGroup;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +33,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.File;
@@ -49,6 +51,9 @@ public class FragmentCall extends Fragment {
 
     File filePath;
     List<Gallery> lstGallery;
+
+    private final int CAMERA_REQUEST_CODE = 40;
+    private final int GALLERY_REQUEST_CODE = 50;
 
     public FragmentCall() {
     }
@@ -84,13 +89,25 @@ public class FragmentCall extends Fragment {
                     Uri photoUri = FileProvider.getUriForFile(v.getContext(), "com.example.taptest.provider", filePath);
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
-                    startActivityForResult(intent, 40);
+                    startActivityForResult(intent, CAMERA_REQUEST_CODE);
 
                 }catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         });
+
+        FloatingActionButton gal = v.findViewById(R.id.goToGallery);
+        gal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent newIntent = new Intent();
+                newIntent.setType("image/*");
+                newIntent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(newIntent, GALLERY_REQUEST_CODE);
+            }
+        });
+
 
         return v;
     }
@@ -99,7 +116,7 @@ public class FragmentCall extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == 40 && resultCode == Activity.RESULT_OK) {
+        if(requestCode == CAMERA_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             if(filePath != null) {
                 BitmapFactory.Options options = new BitmapFactory.Options();
                 options.inJustDecodeBounds = true;
@@ -124,9 +141,19 @@ public class FragmentCall extends Fragment {
                 Bitmap bitmap = BitmapFactory.decodeFile(filePath.getAbsolutePath(), imgOptions);
                 Gallery gallery = new Gallery(bitmap);
                 lstGallery.add(gallery);
-                GridView gridView = v.findViewById(R.id.gridView);
-                adapter = new GridViewAdapter(v.getContext(), lstGallery);
-                gridView.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
+            }
+        } else if (requestCode == GALLERY_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            try {
+                InputStream in = getActivity().getContentResolver().openInputStream(data.getData());
+                Bitmap img = BitmapFactory.decodeStream(in);
+                in.close();
+
+                lstGallery.add(new Gallery(img));
+                adapter.notifyDataSetChanged();
+
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         } else {
             Toast.makeText(getContext(), "Fail", Toast.LENGTH_SHORT).show();
