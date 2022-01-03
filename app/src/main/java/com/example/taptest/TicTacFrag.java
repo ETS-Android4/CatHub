@@ -74,11 +74,11 @@ public class TicTacFrag extends Fragment implements View.OnClickListener {
 
         if (activePlayer) {
             ((Button) v).setText("X");
-            ((Button) v).setTextColor(Color.parseColor("#FFC34A"));
+            ((Button) v).setTextColor(Color.parseColor("#FF0202"));
             gamestate[gameStatePointer] = 0;
         } else {
             ((Button) v).setText("O");
-            ((Button) v).setTextColor(Color.parseColor("#70FFEA"));
+            ((Button) v).setTextColor(Color.parseColor("#FFFC02"));
             gamestate[gameStatePointer] = 1;
         }
         roundCount++;
