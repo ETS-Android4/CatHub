@@ -90,6 +90,7 @@ public class GridViewAdapter extends BaseAdapter {
                 myrecyclerview = mDialog.findViewById(R.id.gallery_recyclerview);
                 recyclerViewAdapter = new RecyclerPhoto(context, items);
                 myrecyclerview.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
+                myrecyclerview.getLayoutManager().scrollToPosition(position + items.size()*300);
                 myrecyclerview.setAdapter(recyclerViewAdapter);
                 mDialog.show();
             }
