@@ -88,8 +88,8 @@ public class GridViewAdapter extends BaseAdapter {
                 ImageView photosNext = mDialog.findViewById(R.id.photo_next);
 
                 photos.setImageResource(gallery.getPhoto());
-                photosBack.setImageResource(gallery.getPhotoBack());
-                photosNext.setImageResource(gallery.getPhotoNext());
+                photosBack.setImageResource(items.get(position-1).getPhoto());
+                photosNext.setImageResource(items.get(position-1).getPhoto());
                 if(gallery.getPhoto() == -1) { photos.setImageBitmap(gallery.getBitmap()); }
                 else {
                     photos.setImageResource(gallery.getPhoto());

@@ -12,7 +12,6 @@ public class Gallery {
     public Gallery(int photo) {
         Photo = photo;
     }
-    }
 
     public Gallery(Bitmap bitmap) { bitMap = bitmap; }
 
@@ -46,3 +45,4 @@ public class Gallery {
     public void setBitmap(Bitmap bitmap) { bitMap = bitmap;}
 
 }
+
