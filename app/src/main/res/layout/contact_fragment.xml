@@ -55,4 +55,19 @@
         app:rippleColor="@android:color/white"
         app:srcCompat="@drawable/ic_add_person_wh" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_connect"
+        android:layout_width="155dp"
+        android:layout_height="186dp"
+        android:layout_alignEnd="@+id/contact_recyclerview"
+        android:layout_alignBottom="@+id/contact_recyclerview"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="70dp"
+        android:backgroundTint="@color/teal_200"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        android:focusable="true"
+        app:rippleColor="@android:color/white"
+        app:srcCompat="@drawable/ic_baseline_book_24" />
+
 </RelativeLayout>
