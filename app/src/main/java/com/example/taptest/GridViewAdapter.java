@@ -18,6 +18,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +28,9 @@ public class GridViewAdapter extends BaseAdapter {
     List<Gallery> items;
     Context context;
     Dialog mDialog, rDialog;
+
+    private RecyclerView myrecyclerview;
+    private RecyclerPhoto recyclerViewAdapter;
 
     public GridViewAdapter(Context mContext, List<Gallery> mData) {
         this.context = mContext;
@@ -69,7 +75,7 @@ public class GridViewAdapter extends BaseAdapter {
 
 
         mDialog = new Dialog(context);
-        mDialog.setContentView(R.layout.dialog_photo);
+        mDialog.setContentView(R.layout.recycler_photo);
         mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         //mDialog.getWindow().getAttributes().windowAnimations = R.anim.scale;
 
@@ -81,11 +87,10 @@ public class GridViewAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "Image Clicked!", Toast.LENGTH_SHORT).show();
-                ImageView photos = mDialog.findViewById(R.id.photo);
-                if(gallery.getPhoto() == -1) { photos.setImageBitmap(gallery.getBitmap()); }
-                else {
-                    photos.setImageResource(gallery.getPhoto());
-                }
+                myrecyclerview = mDialog.findViewById(R.id.gallery_recyclerview);
+                recyclerViewAdapter = new RecyclerPhoto(context, items);
+                myrecyclerview.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
+                myrecyclerview.setAdapter(recyclerViewAdapter);
                 mDialog.show();
             }
         });
