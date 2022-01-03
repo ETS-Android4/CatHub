@@ -88,7 +88,6 @@ public class GridViewAdapter extends BaseAdapter {
         photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Image Clicked!", Toast.LENGTH_SHORT).show();
                 myrecyclerview = mDialog.findViewById(R.id.gallery_recyclerview);
                 recyclerViewAdapter = new RecyclerPhoto(context, items);
                 myrecyclerview.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
