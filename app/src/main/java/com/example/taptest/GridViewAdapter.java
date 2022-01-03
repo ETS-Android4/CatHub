@@ -16,6 +16,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -78,6 +79,7 @@ public class GridViewAdapter extends BaseAdapter {
         mDialog.setContentView(R.layout.recycler_photo);
         mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         //mDialog.getWindow().getAttributes().windowAnimations = R.anim.scale;
+        ScrollView scroll = new ScrollView(context);
 
         rDialog = new Dialog(context);
         rDialog.setContentView(R.layout.remove_photo);
