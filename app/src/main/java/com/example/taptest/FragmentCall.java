@@ -145,7 +145,6 @@ public class FragmentCall extends Fragment {
 
 
                 BitmapFactory.Options imgOptions = new BitmapFactory.Options();
-                imgOptions.inSampleSize = 8;
                 Bitmap bitmap = BitmapFactory.decodeFile(filePath.getAbsolutePath(), imgOptions);
 
                 ExifInterface exif = null;

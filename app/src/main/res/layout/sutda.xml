@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="1dp"
+        android:layout_height="729dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.653"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="1dp" />
+
+    <ImageView
+        android:id="@+id/com1"
+        android:layout_width="90dp"
+        android:layout_height="164dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/user1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tu_back" />
+
+    <ImageView
+        android:id="@+id/com2"
+        android:layout_width="90dp"
+        android:layout_height="164dp"
+        app:layout_constraintBottom_toTopOf="@+id/user2"
+        app:layout_constraintEnd_toStartOf="@+id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/com1"
+        app:srcCompat="@drawable/tu_back" />
+
+    <ImageView
+        android:id="@+id/pae"
+        android:layout_width="90dp"
+        android:layout_height="164dp"
+        app:layout_constraintBottom_toBottomOf="@+id/user2"
+        app:layout_constraintEnd_toStartOf="@+id/divider"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/user2"
+        app:srcCompat="@drawable/tu_back" />
+
+    <ImageView
+        android:id="@+id/user1"
+        android:layout_width="90dp"
+        android:layout_height="164dp"
+        app:layout_constraintEnd_toStartOf="@+id/divider"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/com1"
+        app:layout_constraintTop_toTopOf="@+id/com1"
+        app:srcCompat="@drawable/tu_back" />
+
+    <ImageView
+        android:id="@+id/user2"
+        android:layout_width="90dp"
+        android:layout_height="164dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/pae"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/tu_back" />
+
+    <Button
+        android:id="@+id/jokbo_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg"
+        android:text="족보 보기 "
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/jokbo_dialog3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+    <Button
+        android:id="@+id/jokbo_dialog3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg"
+        android:text="패 돌리기 "
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/jokbo_dialog2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider"
+        app:layout_constraintTop_toBottomOf="@+id/jokbo_dialog" />
+
+    <Button
+        android:id="@+id/jokbo_dialog2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg"
+        android:text="배팅 "
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/jokbo_dialog4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider"
+        app:layout_constraintTop_toBottomOf="@+id/jokbo_dialog3" />
+
+    <Button
+        android:id="@+id/jokbo_dialog4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg"
+        android:text="판 엎기 "
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider"
+        app:layout_constraintTop_toBottomOf="@+id/jokbo_dialog2"
+        app:layout_constraintVertical_bias="0.866" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/comname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Madam Jung"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/Money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="167만 4898"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/jokbo_com"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="38광땡 "
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <TextView
+            android:id="@+id/pandone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="판돈 "
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/pandone2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1억 4천 500만"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="140dp"
+        android:layout_height="68dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/jokbo_dialog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <TextView
+            android:id="@+id/comname2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Goni"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="167만 4898"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="여덟끗 "
+            android:textColor="@color/white" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
