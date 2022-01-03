@@ -168,30 +168,29 @@ public class FragmentCall extends Fragment {
 
         super.onCreate(savedInstanceState);
         lstGallery = new ArrayList<>();
-        lstGallery.add(new Gallery(R.drawable.bw1));
-        lstGallery.add(new Gallery(R.drawable.bw2));
-        lstGallery.add(new Gallery(R.drawable.bw3));
-        lstGallery.add(new Gallery(R.drawable.bw4));
-        lstGallery.add(new Gallery(R.drawable.bw5));
-        lstGallery.add(new Gallery(R.drawable.bw6));
-        lstGallery.add(new Gallery(R.drawable.bw7));
-        lstGallery.add(new Gallery(R.drawable.bw8));
-        lstGallery.add(new Gallery(R.drawable.bw9));
+        lstGallery.add(new Gallery(R.drawable.bw01));
+        lstGallery.add(new Gallery(R.drawable.bw02));
+        lstGallery.add(new Gallery(R.drawable.bw03));
+        lstGallery.add(new Gallery(R.drawable.bw04));
+        lstGallery.add(new Gallery(R.drawable.bw05));
+        lstGallery.add(new Gallery(R.drawable.bw06));
+        lstGallery.add(new Gallery(R.drawable.bw07));
+        lstGallery.add(new Gallery(R.drawable.bw08));
+        lstGallery.add(new Gallery(R.drawable.bw09));
         lstGallery.add(new Gallery(R.drawable.bw10));
         lstGallery.add(new Gallery(R.drawable.bw11));
         lstGallery.add(new Gallery(R.drawable.bw12));
-        lstGallery.add(new Gallery(R.drawable.bw8));
-        lstGallery.add(new Gallery(R.drawable.bw3));
-        lstGallery.add(new Gallery(R.drawable.bw5));
-        lstGallery.add(new Gallery(R.drawable.bw2));
-        lstGallery.add(new Gallery(R.drawable.bw1));
-        lstGallery.add(new Gallery(R.drawable.bw9));
-        lstGallery.add(new Gallery(R.drawable.bw11));
-        lstGallery.add(new Gallery(R.drawable.bw10));
-        lstGallery.add(new Gallery(R.drawable.bw6));
+        lstGallery.add(new Gallery(R.drawable.bw13));
+        lstGallery.add(new Gallery(R.drawable.bw14));
+        lstGallery.add(new Gallery(R.drawable.bw15));
+        lstGallery.add(new Gallery(R.drawable.bw16));
+        lstGallery.add(new Gallery(R.drawable.bw17));
+        lstGallery.add(new Gallery(R.drawable.bw18));
+        lstGallery.add(new Gallery(R.drawable.bw19));
+        lstGallery.add(new Gallery(R.drawable.bw20));
+        lstGallery.add(new Gallery(R.drawable.bw21));
 
     }
 
 }
-
 
