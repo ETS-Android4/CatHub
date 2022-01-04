@@ -62,8 +62,10 @@
 
 ### Tic Tac Toe
 <img src="https://user-images.githubusercontent.com/54874529/148012627-70a2d7f4-ca9a-4a85-adbc-c4585b85f983.gif" height="450px"/>
-- 2인용 게임인 Tic Tac Toe입니다.
-- 두 명이 번갈아가며 O와 X를 3x3 판에 써서 같은 글자를 가로, 세로, 대각선 상에 놓이도록 하는 게임입니다.
+<ul>
+    <li> 2인용 게임인 Tic Tac Toe입니다.</li>
+    <li> 두 명이 번갈아가며 O와 X를 3x3 판에 써서 같은 글자를 가로, 세로, 대각선 상에 놓이도록 하는 게임입니다. </li>
+</ul>
 
 ### Seotda Cat(고양이 섯다)
 <img src="https://user-images.githubusercontent.com/54874529/148012624-2151dbff-2543-4784-aca3-a11fc0d69afc.gif" height="450px"/>
