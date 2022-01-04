@@ -1,25 +1,61 @@
-# CatHub
+# CatHub🐱
 
 > ### Contributor: 박승민, 윤정인   
-*for 2021 Winter Madcamp Week01*
-
-![ic_cathub_round](https://user-images.githubusercontent.com/54874529/148015089-e548cd17-fd06-4370-a861-7dec711c189b.png)
+*for 2021 Winter Madcamp Week01*   
+![ic_cathub_round](https://user-images.githubusercontent.com/54874529/148015089-e548cd17-fd06-4370-a861-7dec711c189b.png) <br/>
+❗️ NOTE: To use this application, DOWNLOAD CatHub.apk file and install it. It only works on **ANDROID OS**.
 
 <p>
 <img alt="Java" src="https://img.shields.io/badge/Java-007396.svg?&style=for-the badge&logo=Java&logoColor=white"/> 
 <img alt="Android" src="https://img.shields.io/badge/Android-3DDC84.svg?&style=for-the badge&logo=Android&logoColor=white"/> 
 </p>
 
+#### Task : Build android application with three tabs
+
+<hr/>
+<h2> ⭐️ Introduce </h2>
+
+<p>
+    In a first week of Madcamp KAIST, we implemented the android application that shows three tabs(actually four tabs). Each tab displays gallery, contact list, and mini games(Tictactoe & Sutda). <br>
+Since we have additional time before presentation, we add extra mini game named “Sutda”.   <br><br>
+
+Sutda is korean traditional card game. You can compete with computer, by using our betting system. <br>
+Try to beat Madam jung! Hope you enjoy our application, have fun!   <br><br>
+
+Our application name is “CatHub”. The main concept of our application is “Cat” and “Dark & Gray color”. <br>
+Actually, the reason that we choose concept “Cat” is because.. just cute!!!  <br>
+When you run this app, you can find cats everywhere.
+
+</p>
+
 <hr/>
 
-## Splash
+## 1️⃣ Splash
 - Splash screen using **Lottie** library(https://github.com/LottieFiles/lottie-android)    
 <img src="https://user-images.githubusercontent.com/54874529/148012712-454297a2-67f5-4759-a51f-4539ffc17446.gif" height="450px"/>
 
 <hr/>
 
-## Gallery
-<img src="https://user-images.githubusercontent.com/54874529/148012618-3de28531-7a6e-4993-b940-7bdcc0375deb.gif" height="450px"/>    
+## 2️⃣ Gallery
+<img src="https://user-images.githubusercontent.com/54874529/148012618-3de28531-7a6e-4993-b940-7bdcc0375deb.gif" height="450px"/>
+Our gallery initially contains images of 21 cat. Every image is shown by grid view, with 3 columns.
+Due to memory usage, we downsampled each image using bitmap to fix slow activity.
+When you tap image, you can see raw image files in horizontally oriented recycler view and move to another image by scrolling. You can scroll left and right, any direction(looks like infinitely).    <br/>
+- Enlarge size of recycler view to int_max
+
+There are two buttons at bottom right of screen.
+1. Add photo from gallery
+You can add one or multiple images to gallery located in external storage of smartphone. 
+
+2. Take photo and put in the gallery
+Go to camera and take photo. You can add image in galley directly.
+
+Finally, you can remove image from gallery by touching image for few seconds. 
+- Implemented by onlongclicklistener
+
+Unfortunately, modified images are not saved when you reboot.(Remain work todo)
+
+</ul>
 <ul>
     <li> <h3> 카메라 Camera </h3> </li>
     <p>
@@ -29,11 +65,14 @@
     <p>
         내부저장소에 있는 사진을 불러올 수 있습니다. 다중 선택이 가능합니다.
     </p>
+    <li> <h3> 사진 삭제 Delete Photo </h3> </li>
+    <p>
+        사진을 길게 눌러 삭제할 수 있습니다.
+    </p>
     <li> <h3> 이미지 슬라이더 Image Slider </h3> </li>
     <p>
         RecyclerView를 통해 이미지 슬라이더를 구현했습니다. 무한 스크롤이 가능합니다.
     </p>
-
 </ul>
 
 <hr/>
@@ -43,7 +82,7 @@
 <ul>
     <li> <h3> 연락처 추가/삭제 Add/Remove Contact </h3> </li>
     <p>
-        우측 하단의 버튼을 통해 연락처를 추가할 수 있습니다. 연락처를 우측에서 좌측으로 슬라이드하면 삭제할 수 있습니다.
+        우측 하단의 버튼을 통해 연락처를 추가할 수 있습니다. 연락처 위에서 좌우 상관없이 반대 방향으로 슬라이드하면 연락처를 삭제할 수 있습니다.
     </p>
     <li> <h3> 내부저장소 Internal Storage </h3> </li>
     <p>
@@ -60,15 +99,29 @@
 
 ## Mini Games
 
-### Tic Tac Toe
+### 3️⃣ Tic Tac Toe 
 <img src="https://user-images.githubusercontent.com/54874529/148012627-70a2d7f4-ca9a-4a85-adbc-c4585b85f983.gif" height="450px"/>
-<ul>
-    <li> 2인용 게임인 Tic Tac Toe입니다.</li>
-    <li> 두 명이 번갈아가며 O와 X를 3x3 판에 써서 같은 글자를 가로, 세로, 대각선 상에 놓이도록 하는 게임입니다. </li>
-</ul>
 
-### Seotda Cat(고양이 섯다)
+> 2인용 게임인 Tic Tac Toe입니다.   
+두 명이 번갈아가며 O와 X를 3x3 판에 써서 같은 글자를 가로, 세로, 대각선 상에 놓이도록 하는 게임입니다.
+
+<p>
+You can play this famous and easy mini game with your cat. (It needs two players) <br>
+Touching 9 buttons shows string “O” or “X” that present each player turn. <br>
+The rule is quite easy : omit <br>
+Player one score and player two score displays each player’s score.<br>
+Reset game by pushing ‘rest game’ button. <br>
+
+- Detailed algorithm and implementation : See TicTacFrag.java and layout/tictac.xml
+</p>
+
+
+### 4️⃣ Cat Sutda(고양이 섯다)
 <img src="https://user-images.githubusercontent.com/54874529/148012624-2151dbff-2543-4784-aca3-a11fc0d69afc.gif" height="450px"/>
+
+> Korean traditional card game!   
+ Detailed algorithm and implementation : See Sutda_game.java and layout/sutda.xml   
+ Dialog layout info : bet_dialog.xml, dialog_jokbo.xml 
 
 당신(Username : Goni)은 CatHub에 있는 고양이들의 사료값을 충당하기 위해 Madam jung 고양이를 찾아갔습니다.
 정정당당한 승부를 통해 귀여운 고양이들의 사료값을 쟁취하세요.
@@ -111,4 +164,8 @@
 
 6) 패를 돌릴 때 잔액이 다음 게임에 참여할 50만원 미만이라면, 최종적으로 패배하게 됩니다. 이 경우, 게임은 자동으로 리셋됩니다.   
 
+<hr/>
 
+# Contact Us
+- jeongin Yoon : yoonjeongin@sookmyung.ac.kr
+- Seungmin Park : @여기 이메일
