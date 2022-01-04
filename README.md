@@ -3,7 +3,7 @@
 > ### Contributor: 박승민, 윤정인   
 *for 2021 Winter Madcamp Week01*
 
-![ic_cathub_round](https://user-images.githubusercontent.com/54874529/148015089-e548cd17-fd06-4370-a861-7dec711c189b.png)
+<p align="center">![ic_cathub_round](https://user-images.githubusercontent.com/54874529/148015089-e548cd17-fd06-4370-a861-7dec711c189b.png)</p>
 
 <p>
 <img alt="Java" src="https://img.shields.io/badge/Java-007396.svg?&style=for-the badge&logo=Java&logoColor=white"/> 
