@@ -74,7 +74,6 @@ public class Sutda_game extends Fragment implements View.OnClickListener {
         userpae2 = v.findViewById(R.id.pae);
 
         initGame();
-        Toast.makeText(getContext(), "패를 돌려주세요", Toast.LENGTH_SHORT).show();
 
         Button jokbo = v.findViewById(R.id.jokbo_dialog);
         Button paedol = v.findViewById(R.id.jokbo_dialog3);
@@ -356,6 +355,7 @@ public class Sutda_game extends Fragment implements View.OnClickListener {
                 aibet();
             } else {
                 if(callState) {
+                    Toast.makeText(getContext(), "정마담 : 콜", Toast.LENGTH_SHORT).show();
                     combetcal(lastCallAmount);
                     Toast.makeText(getContext(), "패를 깝니다.", Toast.LENGTH_SHORT).show();
                     bothCallState(pst);
