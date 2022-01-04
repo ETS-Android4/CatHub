@@ -168,4 +168,4 @@ Reset game by pushing ‘rest game’ button. <br>
 
 # Contact Us
 - jeongin Yoon : yoonjeongin@sookmyung.ac.kr
-- Seungmin Park : @여기 이메일
+- Seungmin Park : smpak@kaist.ac.kr
