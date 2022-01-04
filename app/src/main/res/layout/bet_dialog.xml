@@ -39,9 +39,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="15dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="33dp"
-        android:layout_toStartOf="@+id/textView10"
-        android:text="Call amount : "
+        android:text="콜 배팅 금액 : "
         android:textColor="@color/black"
         android:textSize="16sp" />
 
@@ -52,7 +50,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="67dp"
+        android:layout_marginEnd="15dp"
         android:text="2222"
         android:textColor="@color/black"
         android:textSize="16sp" />
@@ -75,10 +73,8 @@
         android:layout_above="@+id/button4"
         android:layout_alignParentStart="true"
         android:layout_marginStart="15dp"
-        android:layout_marginEnd="33dp"
         android:layout_marginBottom="22dp"
-        android:layout_toStartOf="@+id/textView12"
-        android:text="Half amount : "
+        android:text="하프 배팅 금액 : "
         android:textColor="@color/black"
         android:textSize="16sp" />
 
@@ -88,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/button7"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="67dp"
+        android:layout_marginEnd="15dp"
         android:layout_marginBottom="22dp"
         android:text="2222"
         android:textColor="@color/black"

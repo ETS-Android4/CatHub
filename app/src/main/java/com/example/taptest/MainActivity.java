@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         // 2. 프래그먼트 추가
         viewPagerAdapter.AddFragment(new FragmentCall(),"");
         viewPagerAdapter.AddFragment(new FragmentContact(),"");
+        viewPagerAdapter.AddFragment(new TicTacFrag(), "");
         viewPagerAdapter.AddFragment(new Sutda_game(),"");
 
         // 3. 탭레이아웃 set
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_album_wh);
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_group_wh);
         tabLayout.getTabAt(2).setIcon(R.drawable.ic_baseline_star_24);
+        tabLayout.getTabAt(3).setIcon(R.drawable.ic_baseline_credit_card_24);
 
         OnCheckPermission();
     }
