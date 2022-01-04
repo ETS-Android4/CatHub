@@ -104,7 +104,7 @@ public class Sutda_game extends Fragment implements View.OnClickListener {
             }
             case R.id.jokbo_dialog2: {
                 if(money == 0) {
-                    Toast.makeText(getContext(), "배팅 전에 패를 돌려주세요", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "베팅 전에 패를 돌려주세요", Toast.LENGTH_SHORT).show();
                 } else {
                     TextView bettingHalf = rDialog.findViewById(R.id.textView12);
                     TextView bettingCall = rDialog.findViewById(R.id.textView10);
@@ -125,7 +125,7 @@ public class Sutda_game extends Fragment implements View.OnClickListener {
                 if(money == 0) {
                     Toast.makeText(getContext(), "패를 돌립니다", Toast.LENGTH_SHORT).show();
                     paedol();
-                    Toast.makeText(getContext(), "먼저 배팅해주세요", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "먼저 베팅해주세요", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getContext(), "진행중에는 패를 돌릴 수 없습니다", Toast.LENGTH_SHORT).show();
                 }
@@ -340,9 +340,19 @@ public class Sutda_game extends Fragment implements View.OnClickListener {
     }
 
     public void aibet() {
-        // 콤퓨터는 random bet
+        // 콤퓨터는 random bet 0.2 0.4 0.4
         Random rand = new Random();
-        int val = rand.nextInt(3); //2 half 1 call 0 die
+        int var = rand.nextInt(100) + 1; // 1 ~ 20 , 21 ~ 60, 61 ~ 100
+        int val = 0;
+
+        if(var <= 20) {
+            val = 0;
+        } else if (var <= 60){
+            val = 1;
+        } else {
+            val = 2;
+        }
+
         if (val == 2) {
             if(callState) {
                 aibet();
