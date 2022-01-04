@@ -79,6 +79,24 @@ Unfortunately, modified images are not saved when you reboot.(Remain work todo)
 
 ## Contact
 <img src="https://user-images.githubusercontent.com/54874529/148012607-e6d75fc8-52b7-4d8d-ab88-e61f2c04e2dd.gif" height="450px"/>
+<em> Use GitHub cat image for contact item image </em> <br>
+
+<p>
+Initial data in assets/phoneNumbers.json, getting data and put into recycler view in adapter by gson library. Moreover, you can load new contact from your own contact and add new contact by typing string of name and phone number(Any format: automatically parsed). <br/>
+Likewise in gallery tab, modified contacts are not saved after reboot. (Also remain work!)  <br/>
+
+You can search contact by name and phone number.  <br/>
+- implemented by getFilter method   <br/> 
+    
+You can call directly from contact, by touching call image located in right side of each item.  <br/>
+- getting call permission, ACTION_CALL  <br/>
+Touching each contact shows a dialog containing contact informations.  <br/>
+- Mobile call button : Goto dial with current phone number  <br/>
+- Use messenger : Goto messenger with current phone number, initial text : “Hello World!”  <br/> 
+
+You can remove contact by sliding each contact right or left.
+</p>
+
 <ul>
     <li> <h3> 연락처 추가/삭제 Add/Remove Contact </h3> </li>
     <p>
