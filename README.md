@@ -1,6 +1,6 @@
 # CatHub🐱
 
-> ### Contributor: 박승민, 윤정인   
+> ### Contributor: Seungmin Park, Jeongin Yoon
 *for 2021 Winter Madcamp Week01*   
 ![ic_cathub_round](https://user-images.githubusercontent.com/54874529/148015089-e548cd17-fd06-4370-a861-7dec711c189b.png) <br/>
 ❗️ NOTE: To use this application, DOWNLOAD CatHub.apk file and install it. It only works on **ANDROID OS**.
@@ -185,5 +185,5 @@ Reset game by pushing ‘rest game’ button. <br>
 <hr/>
 
 # Contact Us
-- jeongin Yoon : yoonjeongin@sookmyung.ac.kr
+- Jeongin Yoon : yoonjeongin@sookmyung.ac.kr
 - Seungmin Park : smpak@kaist.ac.kr
