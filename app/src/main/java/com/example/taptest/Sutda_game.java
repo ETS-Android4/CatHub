@@ -188,10 +188,16 @@ public class Sutda_game extends Fragment implements View.OnClickListener {
         if(state == 2) {
             Toast.makeText(getContext(), "이겼습니다!", Toast.LENGTH_SHORT).show();
             diecom();
+            if(commoney == 0) {
+                Toast.makeText(getContext(), "고니가 승리했습니다", Toast.LENGTH_SHORT).show();
+            }
             Toast.makeText(getContext(), "다시 패를 돌려주세요", Toast.LENGTH_SHORT).show();
         } else if (state == 1){
             Toast.makeText(getContext(), "졌습니다ㅜㅜ", Toast.LENGTH_SHORT).show();
             diecal();
+            if(usermoney == 0) {
+                Toast.makeText(getContext(), "정마담이 승리했습니다", Toast.LENGTH_SHORT).show();
+            }
             Toast.makeText(getContext(), "다시 패를 돌려주세요", Toast.LENGTH_SHORT).show();
         } else {
             // 비김
@@ -369,11 +375,17 @@ public class Sutda_game extends Fragment implements View.OnClickListener {
     }
 
     public void betcal(long m) {
-        money += m;
-        usermoney -= m;
-        lastCallAmount = m;
-        pandon.setText(convert(money));
-        money_User.setText(convert(usermoney));
+        if(usermoney <= m) {
+            Toast.makeText(getContext(), "올인했습니다", Toast.LENGTH_SHORT).show();
+            betcal(usermoney);
+            callState = true;
+        } else {
+            money += m;
+            usermoney -= m;
+            lastCallAmount = m;
+            pandon.setText(convert(money));
+            money_User.setText(convert(usermoney));
+        }
     }
 
     public void diecal() {
@@ -386,11 +398,17 @@ public class Sutda_game extends Fragment implements View.OnClickListener {
     }
 
     public void combetcal(long m) {
-        money += m;
-        commoney -= m;
-        lastCallAmount = m;
-        pandon.setText(convert(money));
-        money_Com.setText(convert(commoney));
+        if(commoney <= m) {
+            Toast.makeText(getContext(), "정마담이 올인했습니다", Toast.LENGTH_SHORT).show();
+            combetcal(commoney);
+            callState = true;
+        } else {
+            money += m;
+            commoney -= m;
+            lastCallAmount = m;
+            pandon.setText(convert(money));
+            money_Com.setText(convert(commoney));
+        }
     }
 
     public void diecom() {
@@ -423,25 +441,29 @@ public class Sutda_game extends Fragment implements View.OnClickListener {
     }
 
     public void paedol() {
+        if(commoney < 500000 || usermoney < 500000) {
+            Toast.makeText(getContext(), "돈이 없어요 재경기 할게요..", Toast.LENGTH_SHORT).show();
+            initGame();
+        } else {
+            // 50 씩 빼서 판돈 만들기
+            commoney -= 500000;
+            usermoney -= 500000;
+            money += 1000000;
 
-        // 50 씩 빼서 판돈 만들기
-        commoney -= 500000;
-        usermoney -= 500000;
-        money += 1000000;
+            money_Com.setText(convert(commoney));
+            money_User.setText(convert(usermoney));
+            pandon.setText(convert(money));
 
-        money_Com.setText(convert(commoney));
-        money_User.setText(convert(usermoney));
-        pandon.setText(convert(money));
+            pst = randint();
+            compae1.setImageResource(R.drawable.tu_back);
+            compae2.setImageResource(R.drawable.tu_back);
+            userpae1.setImageResource(paelist[pst[2]]);
+            userpae2.setImageResource(paelist[pst[3]]);
 
-        pst = randint();
-        compae1.setImageResource(R.drawable.tu_back);
-        compae2.setImageResource(R.drawable.tu_back);
-        userpae1.setImageResource(paelist[pst[2]]);
-        userpae2.setImageResource(paelist[pst[3]]);
-
-        String userjok = getjokbo(pst[2], pst[3]);
-        jokbo_User.setText(userjok);
-        jokbo_Com.setText("???");
+            String userjok = getjokbo(pst[2], pst[3]);
+            jokbo_User.setText(userjok);
+            jokbo_Com.setText("???");
+        }
     }
 
     public void openpae() {
