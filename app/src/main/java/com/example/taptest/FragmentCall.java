@@ -145,6 +145,7 @@ public class FragmentCall extends Fragment {
 
 
                 BitmapFactory.Options imgOptions = new BitmapFactory.Options();
+                imgOptions.inSampleSize = 4;
                 Bitmap bitmap = BitmapFactory.decodeFile(filePath.getAbsolutePath(), imgOptions);
 
                 ExifInterface exif = null;
@@ -168,7 +169,11 @@ public class FragmentCall extends Fragment {
                         Uri uri = data.getClipData().getItemAt(index).getUri();
 
                         InputStream in = getActivity().getContentResolver().openInputStream(uri);
-                        Bitmap img = BitmapFactory.decodeStream(in);
+
+                        BitmapFactory.Options imgOptions = new BitmapFactory.Options();
+                        imgOptions.inSampleSize = 4;
+
+                        Bitmap img = BitmapFactory.decodeStream(in, null, imgOptions);
                         in.close();
 
 
@@ -191,7 +196,11 @@ public class FragmentCall extends Fragment {
                     Uri uri = data.getData();
 
                     InputStream in = getActivity().getContentResolver().openInputStream(uri);
-                    Bitmap img = BitmapFactory.decodeStream(in);
+
+                    BitmapFactory.Options imgOptions = new BitmapFactory.Options();
+                    imgOptions.inSampleSize = 4;
+
+                    Bitmap img = BitmapFactory.decodeStream(in, null, imgOptions);
                     in.close();
 
 

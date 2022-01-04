@@ -96,7 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_bg"
-        android:text="배팅 "
+        android:text="베팅 "
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/jokbo_dialog4"
         app:layout_constraintEnd_toEndOf="parent"
