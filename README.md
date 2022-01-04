@@ -10,25 +10,60 @@
 <img alt="Android" src="https://img.shields.io/badge/Android-3DDC84.svg?&style=for-the badge&logo=Android&logoColor=white"/> 
 </p>
 
+<hr/>
 
 ## Splash
-Splash screen using **Lottie** library(https://github.com/LottieFiles/lottie-android)    
+- Splash screen using **Lottie** library(https://github.com/LottieFiles/lottie-android)    
 <img src="https://user-images.githubusercontent.com/54874529/148012712-454297a2-67f5-4759-a51f-4539ffc17446.gif" height="450px"/>
 
+<hr/>
 
 ## Gallery
-<img src="https://user-images.githubusercontent.com/54874529/148012618-3de28531-7a6e-4993-b940-7bdcc0375deb.gif" height="450px"/>   
+<img src="https://user-images.githubusercontent.com/54874529/148012618-3de28531-7a6e-4993-b940-7bdcc0375deb.gif" height="450px"/>    
+<ul>
+    <li> <h3> 카메라 Camera </h3> </li>
+    <p>
+        기기의 카메라를 이용하여 사진을 촬영하고 갤러리 탭에 저장할 수 있습니다.
+    </p>
+    <li> <h3> 내부저장소 Internal Storage </h3> </li>
+    <p>
+        내부저장소에 있는 사진을 불러올 수 있습니다. 다중 선택이 가능합니다.
+    </p>
+    <li> <h3> 이미지 슬라이더 Image Slider </h3> </li>
+    <p>
+        RecyclerView를 통해 이미지 슬라이더를 구현했습니다. 무한 스크롤이 가능합니다.
+    </p>
 
+</ul>
+
+<hr/>
 
 ## Contact
 <img src="https://user-images.githubusercontent.com/54874529/148012607-e6d75fc8-52b7-4d8d-ab88-e61f2c04e2dd.gif" height="450px"/>
+<ul>
+    <li> <h3> 연락처 추가/삭제 Add/Remove Contact </h3> </li>
+    <p>
+        우측 하단의 버튼을 통해 연락처를 추가할 수 있습니다. 연락처를 우측에서 좌측으로 슬라이드하면 
+    </p>
+    <li> <h3> 내부저장소 Internal Storage </h3> </li>
+    <p>
+        내부저장소에 있는 사진을 불러올 수 있습니다. 다중 선택이 가능합니다.
+    </p>
+    <li> <h3> 이미지 슬라이더 Image Slider </h3> </li>
+    <p>
+        RecyclerView를 통해 이미지 슬라이더를 구현했습니다. 무한 스크롤이 가능합니다.
+    </p>
 
+</ul>
+
+<hr/>
 
 ## Mini Games
 
 ### Tic Tac Toe
 <img src="https://user-images.githubusercontent.com/54874529/148012627-70a2d7f4-ca9a-4a85-adbc-c4585b85f983.gif" height="450px"/>
-
+- 2인용 게임인 Tic Tac Toe입니다.
+- 두 명이 번갈아가며 O와 X를 3x3 판에 써서 같은 글자를 가로, 세로, 대각선 상에 놓이도록 하는 게임입니다.
 
 ### Seotda Cat(고양이 섯다)
 <img src="https://user-images.githubusercontent.com/54874529/148012624-2151dbff-2543-4784-aca3-a11fc0d69afc.gif" height="450px"/>
