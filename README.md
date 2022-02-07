@@ -6,8 +6,8 @@
 ❗️ NOTE: To use this application, DOWNLOAD CatHub.apk file and install it. It only works on **ANDROID OS**.
 
 <p>
-<img alt="Java" src="https://img.shields.io/badge/Java-007396.svg?&style=for-the badge&logo=Java&logoColor=white"/> 
-<img alt="Android" src="https://img.shields.io/badge/Android-3DDC84.svg?&style=for-the badge&logo=Android&logoColor=white"/> 
+<img alt="Java" src="https://img.shields.io/badge/Java-007396.svg?&style=for-thebadge&logo=Java&logoColor=white"/> 
+<img alt="Android" src="https://img.shields.io/badge/Android-3DDC84.svg?&style=for-thebadge&logo=Android&logoColor=white"/> 
 </p>
 
 #### Task : Build android application with three tabs
